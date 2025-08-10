@@ -23,5 +23,9 @@ body::before {
     animation: slide 5s cubic-bezier(.04,.77,.88,.99) ;
     pointer-events: none;
 }
-body {
+#oi {
+    font-family: "Oi", serif;
+    font-size: 500%;
+    font-weight: 400;
+    font-style: normal;
 }
