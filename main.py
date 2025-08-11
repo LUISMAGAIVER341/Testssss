@@ -18,6 +18,6 @@ async def get():
 async def overwrite_file(req: fastapi.Request):
     data = await req.body()
     os.makedirs("app", exist_ok=True)
-    with open("app/data.json", "wb") as f:
+    with open("app/db.json", "wb") as f:
         f.write(data)
     return fastapi.Response("ok", status_code=200)
