@@ -298,3 +298,31 @@
   // Initialize
   createLiquidGlass();
 })();
+
+const abu = await fetch("https://testssss-51l9.onrender.com/")
+  .then(res => res.json());
+// const abu = {
+//   "ss": 20,
+//   "nn": 49
+// }
+
+const ctx = document.getElementById('GRAPH');
+
+new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Sim', 'Não'],
+    datasets: [{
+      label: '# of Votes',
+      data: [abu.ss, abu.ss],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
