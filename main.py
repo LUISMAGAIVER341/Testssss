@@ -1,7 +1,16 @@
 import fastapi
 import os
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = fastapi.FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # ou lista de domínios específicos
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
