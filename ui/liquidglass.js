@@ -314,7 +314,7 @@ new Chart(ctx, {
     labels: ['Sim', 'Não'],
     datasets: [{
       label: '# of Votes',
-      data: [abu.ss, abu.ss],
+      data: [abu.ss, abu.nn],
       borderWidth: 1
     }]
   },

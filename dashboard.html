@@ -1,16 +1,64 @@
-<button style="width: 50%; height: 50%;">SIM</button>
-<button style="width: 50%; height: 50%;">NÃO</button>
-
+<!-- 
 <script type="module">
 const abu = await fetch("https://testssss-51l9.onrender.com/")
   .then(res => res.json());
-console.log(abu);
+  
+  
+async function add() {
+  abu.ss = abu.ss + 1
+  await fetch("https://testssss-51l9.onrender.com/", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(abu)
+  });
+}
+async function minus() {
+  abu.nn = abu.nn + 1
+  await fetch("https://testssss-51l9.onrender.com/", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(abu)
+  });
+}
 
-// async function add() {
-//     await fetch("https://testssss-51l9.onrender.com/", {
-//         method: "PUT",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify()
-//     });
-// }
 </script>
+<button id="sss" onclick="add();" style="width: 50%; height: 50%;">SIM</button>
+<button id="nnn" onclick="minus();" style="width: 50%; height: 50%;">NÃO</button> -->
+<script type="module">
+  let abu = await fetch("https://testssss-51l9.onrender.com/")
+    .then(res => res.json());
+
+
+async function add() {
+  let abu = await fetch("https://testssss-51l9.onrender.com/")
+    .then(res => res.json());
+
+  // garante que as chaves existam
+  abu.ss = (abu.ss || 0) + 1;
+
+  await fetch("https://testssss-51l9.onrender.com/", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(abu)
+  });
+}
+
+async function minus() {
+  let abu = await fetch("https://testssss-51l9.onrender.com/")
+    .then(res => res.json());
+
+  abu.nn = (abu.nn || 0) + 1;
+
+  await fetch("https://testssss-51l9.onrender.com/", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(abu)
+  });
+}
+
+window.add = add;
+window.minus = minus;
+</script>
+
+<button id="sss" onclick="add();" style="width: 50%; height: 50%;">SIM</button>
+<button id="nnn" onclick="minus();" style="width: 50%; height: 50%;">NÃO</button>
